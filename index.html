@@ -1,0 +1,419 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#142b4a">
+    <meta name="description" content="MYC PD4 Freelancing Class 2026 Examination Results Portal">
+    <title>MYC PD4 | Examination Results Portal 2026</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="brand">
+            <h2>Multi Purpose Youth Center (MYC PD4)</h2>
+        </div>
+        <span class="year">2026</span>
+    </header>
+
+    <main>
+
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <span class="eyebrow">FREELANCING CLASS · MORNING SHIFT</span>
+
+            <h1>
+                Second Monthly<br>
+                Examination Results
+            </h1>
+
+            <p>
+                Discover your examination results, understand your performance,
+                and identify opportunities for further learning and improvement.
+            </p>
+        </section>
+
+        <!-- STUDENT SEARCH SECTION -->
+        <section class="search-card">
+
+            <span class="eyebrow">STUDENT PORTAL</span>
+
+            <h2>Find Your Results</h2>
+
+            <p class="description">
+                Enter your Student ID and full name to access your individual
+                examination report.
+            </p>
+
+            <form id="resultForm">
+
+                <label for="studentId">Student ID</label>
+
+                <input
+                    type="text"
+                    id="studentId"
+                    placeholder="e.g. FC-2026-001"
+                    autocomplete="off"
+                    required
+                >
+
+                <label for="fullName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Enter your full name"
+                    autocomplete="off"
+                    required
+                >
+
+                <button type="submit" id="searchButton">
+                    Check My Results
+                </button>
+
+            </form>
+
+            <div
+                id="message"
+                class="message"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+        </section>
+
+
+        <!-- INDIVIDUAL STUDENT RESULTS -->
+        <!-- This entire section stays hidden until a successful search. -->
+
+        <section
+            id="resultSection"
+            class="result-section"
+            hidden
+        >
+
+            <!-- RESULTS HEADING -->
+            <div class="result-heading">
+
+                <div>
+                    <span class="eyebrow">YOUR ACADEMIC PERFORMANCE</span>
+
+                    <h2>Examination Report</h2>
+
+                    <p class="report-subtitle">
+                        Second Monthly Examination · Freelancing Class 2026
+                    </p>
+                </div>
+
+                <span id="gradeBadge" class="grade-badge"></span>
+
+            </div>
+
+
+            <!-- STUDENT INFORMATION -->
+            <div class="student-details">
+
+                <div>
+                    <span>Student Name</span>
+                    <strong id="studentName"></strong>
+                </div>
+
+                <div>
+                    <span>Student ID</span>
+                    <strong id="displayStudentId"></strong>
+                </div>
+
+                <div>
+                    <span>Father's Name</span>
+                    <strong id="fatherName"></strong>
+                </div>
+
+                <div>
+                    <span>Examination Status</span>
+                    <strong id="examStatus"></strong>
+                </div>
+
+            </div>
+
+
+            <!-- OVERALL SCORE SUMMARY -->
+            <div class="score-summary">
+
+                <div class="score-box">
+
+                    <span>Total Marks Obtained</span>
+
+                    <strong id="totalScore"></strong>
+
+                    <small>Out of 100 marks</small>
+
+                </div>
+
+                <div class="score-box">
+
+                    <span>Overall Percentage</span>
+
+                    <strong id="percentage"></strong>
+
+                    <small>Your overall examination result</small>
+
+                </div>
+
+            </div>
+
+
+            <!-- OVERALL PERFORMANCE -->
+            <div class="performance-card">
+
+                <div class="performance-card-heading">
+
+                    <span class="eyebrow">
+                        YOUR OVERALL PERFORMANCE
+                    </span>
+
+                    <strong id="performanceLevel"></strong>
+
+                </div>
+
+                <p id="performanceDescription">
+                    Your overall performance summary will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- EXAMINATION BREAKDOWN -->
+            <div class="breakdown-heading">
+
+                <div>
+                    <span class="eyebrow">DETAILED SCORE REPORT</span>
+
+                    <h3>Examination Breakdown</h3>
+                </div>
+
+                <p>
+                    Explore your marks, section percentages, and individual
+                    performance feedback.
+                </p>
+
+            </div>
+
+            <!-- JavaScript generates the four examination part cards here. -->
+            <div
+                id="partsContainer"
+                class="parts-grid"
+            ></div>
+
+
+            <!-- INSTRUCTOR FEEDBACK -->
+            <div class="feedback-card">
+
+                <span class="eyebrow">INSTRUCTOR'S FEEDBACK</span>
+
+                <h3>Your Learning Feedback</h3>
+
+                <p id="instructorFeedback">
+                    Your instructor's feedback will appear here.
+                </p>
+
+            </div>
+
+
+            <!-- RESULTS REVIEW AND COMPLAINT -->
+            <!-- Students can access this form only after viewing their results. -->
+
+            <section class="complaint-section">
+
+                <div class="section-heading">
+
+                    <span class="eyebrow">YOUR VOICE MATTERS</span>
+
+                    <h2>Results Review & Complaint</h2>
+
+                    <p>
+                        Your feedback is important to us. Let us know whether
+                        you are satisfied with your examination result or
+                        would like to request a review.
+                    </p>
+
+                </div>
+
+
+                <form id="complaintForm" class="complaint-form">
+
+                    <!-- STUDENT IDENTIFICATION -->
+
+                    <label for="complaintStudentId">
+                        Student ID
+                    </label>
+
+                    <input
+                        type="text"
+                        id="complaintStudentId"
+                        placeholder="Enter your Student ID"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    <label for="complaintFullName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="complaintFullName"
+                        placeholder="Enter your full name"
+                        autocomplete="off"
+                        required
+                    >
+
+
+                    <!-- SATISFACTION RESPONSE -->
+
+                    <label for="satisfaction">
+                        Are you satisfied with your result?
+                    </label>
+
+                    <select id="satisfaction" required>
+
+                        <option value="">
+                            Select your response
+                        </option>
+
+                        <option value="Satisfied">
+                            Yes, I am satisfied
+                        </option>
+
+                        <option value="Not satisfied">
+                            No, I am not satisfied
+                        </option>
+
+                    </select>
+
+
+                    <!-- REVIEW REQUEST FIELDS -->
+
+                    <div id="reviewFields" hidden>
+
+                        <label for="reviewPart">
+                            Which part of your examination would you like reviewed?
+                        </label>
+
+                        <select id="reviewPart">
+
+                            <option value="">
+                                Select an examination part
+                            </option>
+
+                            <option value="Part A">Part A</option>
+
+                            <option value="Part B">Part B</option>
+
+                            <option value="Part C">Part C</option>
+
+                            <option value="Part D">Part D</option>
+
+                            <option value="Total Marks">Total Marks</option>
+
+                            <option value="Entire Examination">
+                                Entire Examination
+                            </option>
+
+                        </select>
+
+
+                        <label for="complaintReason">
+                            Explain your concern
+                        </label>
+
+                        <textarea
+                            id="complaintReason"
+                            rows="5"
+                            placeholder="Please explain why you believe your result should be reviewed..."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- SATISFIED MESSAGE -->
+
+                    <div
+                        id="satisfiedMessage"
+                        class="satisfied-message"
+                        hidden
+                    >
+                        Thank you for sharing your response.
+                        We appreciate your feedback.
+                    </div>
+
+
+                    <!-- SUBMISSION -->
+
+                    <button
+                        type="submit"
+                        id="complaintButton"
+                    >
+                        Submit My Response
+                    </button>
+
+
+                    <div
+                        id="complaintMessage"
+                        class="message"
+                        role="status"
+                        aria-live="polite"
+                    ></div>
+
+                </form>
+
+
+                <p class="privacy-note">
+                    Your response and review request should relate only
+                    to your own examination results. Please provide
+                    accurate information.
+                </p>
+
+            </section>
+
+
+            <!-- END OF INDIVIDUAL RESULTS -->
+
+            <p class="result-note">
+                This report reflects your recorded examination performance.
+                For questions or concerns, please submit your response
+                through the review section above.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <h3>Multi Purpose Youth Center (MYC PD4)</h3>
+
+        <p>
+            Freelancing Class |
+            Second Monthly Examination |
+            2026
+        </p>
+
+        <small>
+            Empowering young people through digital skills and opportunities.
+        </small>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="script.js"></script>
+
+</body>
+</html>
