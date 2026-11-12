@@ -169,13 +169,31 @@ const students = [
         studentId: "FC-2026-012",
         fullName: "Momina Mohammadi",
         fatherName: "Nazir Ahmad",
-        published: false
+        partA: 18,
+        partB: 13,
+        partC: 25,
+        partD: 16,
+        total: 72,
+        percentage: 72.0,
+        performance: "Good",
+        status: "Passed",
+        published: true
+       
     },
     {
         studentId: "FC-2026-013",
         fullName: "Maryam Shahin",
         fatherName: "Abdul Qayoum",
-        published: false
+        partA: 20,
+        partB: 21,
+        partC: 34,
+        partD: 19,
+        total: 94,
+        percentage: 94.0,
+        performance: "Excellent",
+        status: "Passed",
+        published: true
+    
     }
 ];
 
